@@ -18,8 +18,7 @@ print(number_of_authors(books[0]))
 def get_book_by_id(book_id, books):
     for book in books:
         if book_id == book["id"] :
-            found_book=book
-    return found_book
+            return book
 
 
 print(get_book_by_id(38, books))
@@ -31,8 +30,7 @@ print(get_book_by_id(38, books))
 # adds the summary to the book dictionary
 # return the book dictionary
 def add_summary_to_book(summary, book):
-    for book in books:
-        book["Summary"]=summary
+    book["Summary"]=summary
     return book
 
 
