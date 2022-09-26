@@ -25,16 +25,18 @@ def get_book_by_id(book_id, books):
 print(get_book_by_id(38, books))
 
 
-# # add_summary_to_book(summary, book)
-# # receives a book dictionary
-# # recieves a summary string
-# # adds the summary to the book dictionary
-# # return the book dictionary
-# def add_summary_to_book(summary, book):
-#     ...
+# add_summary_to_book(summary, book)
+# receives a book dictionary
+# recieves a summary string
+# adds the summary to the book dictionary
+# return the book dictionary
+def add_summary_to_book(summary, book):
+    for book in books:
+        book["Summary"]=summary
+    return book
 
 
-# print(add_summary_to_book("this is a good book about", books[0]))
+print(add_summary_to_book("this is a good book about", books[0]))
 
 
 # # CHALLENGE 1
