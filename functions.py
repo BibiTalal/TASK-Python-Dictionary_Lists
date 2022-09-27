@@ -37,40 +37,49 @@ def add_summary_to_book(summary, book):
 print(add_summary_to_book("this is a good book about", books[0]))
 
 
-# # CHALLENGE 1
-# # get_book_property(property, book)
-# # receives a book dictionary
-# # recieves a property (string)
-# # return the book property
+# CHALLENGE 1
+# get_book_property(property, book)
+# receives a book dictionary
+# recieves a property (string)
+# return the book property
 
 
-# def get_book_property(property, book):
-#     ...
+def get_book_property(property, book):
+    return book[property]
 
 
-# print(get_book_property("color", books[0]))
-# print(get_book_property("title", books[0]))
 
 
-# # CHALLENGE 2
-# # calculate_available_books(books)
-# # receives a list of books
-# # return a new list of unavailable books
+print(get_book_property("color", books[0]))
+print(get_book_property("title", books[0]))
 
 
-# def calculate_not_available_books(books):
-#     ...
+# CHALLENGE 2
+# calculate_available_books(books)
+# receives a list of books
+# return a new list of unavailable books
 
 
-# print(calculate_not_available_books(books))
-
-# # CHALLENGE 3
-# # get_book_by_author_name(author_name, books)
-# # receives a author name (string)
-# # recieves a list of book dictionaries
-# # returns the book dictionary that contains an author with the author name provided
-# def get_book_by_author_name(author_name, books):
-#     ...
+def calculate_not_available_books(books):
+    unavailable_books=[]
+    for book in books:
+        if book["available"]== False:
+            unavailable_books.append(book)
+    return unavailable_books
 
 
-# print(get_book_by_author_name("Neil Gaiman", books))
+print(calculate_not_available_books(books))
+
+# CHALLENGE 3
+# get_book_by_author_name(author_name, books)
+# receives a author name (string)
+# recieves a list of book dictionaries
+# returns the book dictionary that contains an author with the author name provided
+def get_book_by_author_name(author_name, books):
+    for book in books:
+        for author in book["authors"]:
+            if author_name == author["name"]:
+                return book
+
+
+print(get_book_by_author_name("Neil Gaiman", books))
